@@ -7,13 +7,14 @@ import App from "./App.tsx";
 import { HelmetProvider } from "react-helmet-async";
 import { PersistGate } from "redux-persist/integration/react";
 import "./index.scss";
+import { persistor, store } from "./store/store.ts";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <HelmetProvider>
-        <Provider store={undefined}>
-          <PersistGate>
+        <Provider store={store}>
+          <PersistGate loading={undefined} persistor={persistor}>
             <MantineProvider>
               <App />
             </MantineProvider>
