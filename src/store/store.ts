@@ -11,7 +11,6 @@ import {
   REGISTER,
 } from "redux-persist";
 import type { Reducer, Action } from "@reduxjs/toolkit";
-import storage from "redux-persist/lib/storage";
 import { LOGOUT } from "./action/types";
 import { createLogger } from "redux-logger";
 
@@ -19,6 +18,7 @@ import AuthReducer, {
   initialState as AuthInitialState,
 } from "../store/reducers/auth.reducer";
 import { ReduxSlice } from "../types/enums";
+import storage from "redux-persist/es/storage";
 
 const logger = createLogger();
 
